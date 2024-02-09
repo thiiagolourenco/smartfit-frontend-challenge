@@ -1,27 +1,60 @@
-# Smartfit Frontend Challenge - Angular 
+# Desafio Frontend - Smart Fit
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
+![Smart Fit](./src/assets/images/svg/logo.svg)
 
-## Development server
+Repositório para a solução do desafio de [Front-end da Smart Fit](https://github.com/bioritmo/front-end-code-challenge-smartsite/tree/master). Nesse desafio, utilizei o framework Angular, versão 15.0.5, para desenvolver a aplicação.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 📖 Desafio
 
-## Code scaffolding
+A Smart Fit passou por várias mudanças durante a pandemia. Com isso, foi necessário desenvolver uma página para buscar unidades abertas/fechadas para consulta e reserva. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Neste desafio, foi implementado as seguintes funcionalidades de acordo com as regras de negócio definidas:
 
-## Build
+### Funcionalidades
+[x] Carrega unidades através do arquivo JSON [locations.json](https://test-frontend-developer.s3.amazonaws.com/data/locations.json) utilizando o método `GET`.
+[x] Busca por todas as unidades.
+[x] Busca por unidades com filtros.
+[x] Previsão do número de resultados encontrados.
+[x] Listagem das unidades encontradas após a busca.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Regras de negócio
+- Filtra unidades abertas ou fechadas.
+- Filtra unidades por período de funcionamento.
+- Exibe a mensagem "Nenhuma unidade encontrada" quando não há resultados.
+- Valida e exibe os ícones corretos de acordo com o status da unidade.
 
-## Running unit tests
+## 🎨 Layout
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+O layout da aplicação foi baseado nos materiais disponibilizados, incluindo designs para dispositivos móveis e desktop, cores, imagens e fontes. A fidelidade ao layout proposto foi mantida, e a aplicação é responsiva para dispositivos móveis, tablets e desktops.
 
-## Running end-to-end tests
+## ⚙️ Como Executar
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Para executar a aplicação localmente, siga os passos abaixo:
 
-## Further help
+1. Clone este repositório:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+  git clone https://github.com/thiiagolourenco/smartfit-frontend-challenge.git
+  cd smartfit-frontend-challenge
+
+```
+
+2. Instale as dependências
+
+```bash
+  npm install
+```
+
+3. Inicie a aplicação
+
+```bash
+  npm run start
+```
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Made with 💜 by Thiago Lourenço [Check out my LinkedIn](https://www.linkedin.com/in/thiiagolourenco)
