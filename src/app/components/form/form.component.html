@@ -1,1 +1,6 @@
-<p>form works!</p>
+<div class="form-container">
+  <form [formGroup]="searchForm">
+    <button classs="submit-btn" type="submit" (click)="onSubmit()" [disabled]="!searchForm.valid">Entrar</button>
+    <button classs="clean-btn" type="button" (click)="onClean()">Limpar</button>
+  </form>
+</div>
