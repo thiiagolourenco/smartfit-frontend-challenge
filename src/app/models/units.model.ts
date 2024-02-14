@@ -1,6 +1,6 @@
 import { Schedule } from './schedule.model';
 
-export class Location {
+export class Units {
   constructor(
     public id: number,
     public title: string,
