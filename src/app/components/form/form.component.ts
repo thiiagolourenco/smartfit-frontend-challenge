@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { Search } from 'src/app/models/search.model';
+import { Units } from 'src/app/models/units.model';
 
 @Component({
   selector: 'smartfit-form',
@@ -10,7 +11,7 @@ import { Search } from 'src/app/models/search.model';
 })
 export class FormComponent implements OnInit {
   public search: Search;
-  public results: Location[];
+  public results: Units[];
   public searchForm!: FormGroup;
 
   constructor(private fb: FormBuilder) {
