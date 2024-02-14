@@ -1,8 +1,5 @@
 export class Search {
-  constructor(
-    public shift: string | null,
-    public showClosedUnits: boolean | null
-  ) {
+  constructor(public shift: string, public showClosedUnits: boolean) {
     this.shift = shift;
     this.showClosedUnits = showClosedUnits;
   }

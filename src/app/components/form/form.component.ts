@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
 import { Search } from 'src/app/models/search.model';
+
 import { Units } from 'src/app/models/units.model';
+import { FilterService } from 'src/app/services/filter/filter.service';
+import { UnitsService } from 'src/app/services/units/units.service';
 
 @Component({
   selector: 'smartfit-form',
@@ -11,12 +13,19 @@ import { Units } from 'src/app/models/units.model';
 })
 export class FormComponent implements OnInit {
   public search: Search;
-  public results: Units[];
   public searchForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  public results: Units[];
+  public filteredResults: Units[];
+
+  constructor(
+    private fb: FormBuilder,
+    private unitsService: UnitsService,
+    private filterService: FilterService
+  ) {
     this.search = new Search('', false);
     this.results = [];
+    this.filteredResults = [];
   }
 
   ngOnInit(): void {
@@ -24,14 +33,31 @@ export class FormComponent implements OnInit {
       shift: ['', Validators.required],
       showClosedUnits: false,
     });
+
+    try {
+      this.unitsService.getAllUnits().subscribe((data) => {
+        this.results = data.locations;
+        this.filteredResults = data.locations;
+      });
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   onSubmit(): void {
-    console.log('SHIFT VALUE', this.searchForm.controls['shift'].value);
-    console.log(
-      'SHOW CLOISED UNIT VALUE',
+    //JUST TO TEST OBJECT INSTANCE
+    this.search = new Search(
+      this.searchForm.controls['shift'].value,
       this.searchForm.controls['showClosedUnits'].value
     );
+
+    if (this.search.shift) {
+      this.filteredResults = this.filterService.filter(
+        this.results,
+        this.search.showClosedUnits,
+        this.search.shift
+      );
+    }
   }
 
   onClean(): void {
