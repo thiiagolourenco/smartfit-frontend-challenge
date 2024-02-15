@@ -11,6 +11,7 @@ import { UnitsService } from './services/units/units.service';
 import { FilterService } from './services/filter/filter.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardListComponent } from './components/card-list/card-list.component';
+import { SubtitleComponent } from './components/subtitle/subtitle.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CardListComponent } from './components/card-list/card-list.component';
     FormComponent,
     HeaderComponent,
     FooterComponent,
-    CardListComponent
+    CardListComponent,
+    SubtitleComponent
   ],
   imports: [
     FormsModule,
