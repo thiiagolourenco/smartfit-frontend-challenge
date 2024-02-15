@@ -9,12 +9,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { FormComponent } from './components/form/form.component';
 import { UnitsService } from './services/units/units.service';
 import { FilterService } from './services/filter/filter.service';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
     HeaderComponent,
+    FooterComponent
   ],
   imports: [
     FormsModule,
