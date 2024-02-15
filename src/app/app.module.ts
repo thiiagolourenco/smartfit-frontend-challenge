@@ -10,13 +10,15 @@ import { FormComponent } from './components/form/form.component';
 import { UnitsService } from './services/units/units.service';
 import { FilterService } from './services/filter/filter.service';
 import { FooterComponent } from './components/footer/footer.component';
+import { CardListComponent } from './components/card-list/card-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CardListComponent
   ],
   imports: [
     FormsModule,
