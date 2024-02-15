@@ -45,7 +45,7 @@ export class FormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    //JUST TO TEST OBJECT INSTANCE
+    //The line below was to test object instance new Search()
     this.search = new Search(
       this.searchForm.controls['shift'].value,
       this.searchForm.controls['showClosedUnits'].value
